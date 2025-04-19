@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\AgentTransactionController;
 
 Route::get('/login-page', [AuthController::class, 'loginPage'])->name('web.login');
 Route::get('/register-page', [AuthController::class, 'registerPage'])->name('web.register');
@@ -14,6 +15,8 @@ Route::get('/dashboard', [DashboardController::class, 'dashboardPage'])->name('w
 Route::get('/customer', [DashboardController::class, 'customerPage'])->name('web.customer');
 Route::get('/category', [DashboardController::class, 'categoryPage'])->name('web.category');
 Route::get('/product', [DashboardController::class, 'productPage'])->name('web.product');
+Route::get('/agent', [DashboardController::class, 'agentPage'])->name('web.agent');
+Route::delete('/agent-transactions/{id}', [AgentTransactionController::class, 'destroy']);
 Route::get('/sale', [DashboardController::class, 'salePage'])->name('web.sale');
 Route::get('/invoice', [DashboardController::class, 'invoicePage'])->name('web.invoice');
 Route::get('/report', [DashboardController::class, 'reportPage'])->name('web.report');

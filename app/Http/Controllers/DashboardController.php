@@ -26,6 +26,19 @@ class DashboardController extends Controller
         return view('dashboard.product-page');
     }
 
+    function agentPage()
+    {
+
+        return view('dashboard.transactions-page');
+    }
+
+    function agentTransactionPage()
+    {
+        echo "Hello World";
+        die;
+        // return view('dashboard.transactions-page');
+    }
+
     function salePage()
     {
         return view('dashboard.sale-page');

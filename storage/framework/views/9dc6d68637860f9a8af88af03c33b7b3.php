@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>X-Bakery</title>
+    <title>SRVE LINK | Agen BRI</title>
     <link type="image/x-icon" href="<?php echo e(asset('/favicon.ico')); ?>" rel="icon" />
     <link href="<?php echo e(asset('css/bootstrap.css')); ?>" rel="stylesheet" />
     <link href="<?php echo e(asset('css/animate.min.css')); ?>" rel="stylesheet" />

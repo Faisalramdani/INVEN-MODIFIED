@@ -48,8 +48,22 @@ class InvoiceController extends Controller
             ]);
 
             $totalPrice = 0;
+            // foreach ($request->products as $product) {
+            //     $productPrice = Product::where('id', $product['product_id'])->first()->price;
+            //     InvoiceProduct::create([
+            //         'quantity' => $product['quantity'],
+            //         'sale_price' => $product['quantity'] * $productPrice,
+            //         'product_id' => $product['product_id'],
+            //         'invoice_id' => $invoice->id,
+            //         'user_id' => $invoice->user_id,
+            //     ]);
+            //     $totalPrice += $product['quantity'] * $productPrice;
+            // }
+
             foreach ($request->products as $product) {
-                $productPrice = Product::where('id', $product['product_id'])->first()->price;
+                $productModel = Product::where('id', $product['product_id'])->first();
+                $productPrice = $productModel->price;
+
                 InvoiceProduct::create([
                     'quantity' => $product['quantity'],
                     'sale_price' => $product['quantity'] * $productPrice,
@@ -57,7 +71,12 @@ class InvoiceController extends Controller
                     'invoice_id' => $invoice->id,
                     'user_id' => $invoice->user_id,
                 ]);
+
                 $totalPrice += $product['quantity'] * $productPrice;
+
+                // Tambahkan ini untuk mengurangi stok
+                $productModel->unit = $productModel->unit - $product['quantity'];
+                $productModel->save();
             }
 
             $invoice->total = $totalPrice;
@@ -65,7 +84,6 @@ class InvoiceController extends Controller
             $invoice->save();
 
             return $this->sendSuccess("Invoice created successfully", $invoice, 201);
-
         } catch (\Throwable $th) {
             return $this->sendError("Failed to create Invoice", 200, $th->getMessage());
         }

@@ -4,9 +4,10 @@
     <nav class="navbar sticky-top navbar-expand-lg navbar-light py-2 shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img class="img-fluid" src="{{ asset('/images/logo.png') }}" alt="" width="96px">
+                <img class="img-fluid" src="{{ asset('/images/logo-website-SRVE-LINK.png') }}" alt="" width="96px">
             </a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#header01" type="button" aria-controls="header01" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#header01" type="button"
+                aria-controls="header01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse" id="header01">
@@ -26,8 +27,10 @@
             <div class="row align-items-center mb-5">
                 <div class="col-12 col-md-10 col-lg-5 mb-lg-0 mb-5">
                     <h2 class="fw-bold mb-3">Elevate Your Sales Game with Our Powerful POS Application! </h2>
-                    <p class="lead text-muted mb-4">Discover streamlined transactions, real-time inventory management, and actionable insights in one intuitive POS app.</p>
-                    <div class="d-flex flex-wrap"><a class="btn bg-gradient-primary mb-sm-0 mb-2 me-2" href="{{ route('web.login') }}">Start Sale</a>
+                    <p class="lead text-muted mb-4">Discover streamlined transactions, real-time inventory management, and
+                        actionable insights in one intuitive POS app.</p>
+                    <div class="d-flex flex-wrap"><a class="btn bg-gradient-primary mb-sm-0 mb-2 me-2"
+                            href="{{ route('web.login') }}">Start Sale</a>
                         <a class="btn bg-gradient-primary mb-sm-0 mb-2" href="{{ route('web.login') }}">Login</a>
                     </div>
                 </div>
@@ -108,7 +111,8 @@
     <footer class="bg-light py-5">
         <div class="border-bottom container pb-5 text-center">
             <a class="d-inline-block mx-auto mb-4" href="#">
-                <img class="img-fluid"src="{{ asset('/images/logo.png') }}" alt="" width="96px">
+                <img class="img-fluid"src="{{ asset('/images/logo-website-SRVE-LINK.png') }}" alt=""
+                    width="96px">
             </a>
             <ul class="d-flex justify-content-center align-items-center list-unstyled mb-4 flex-wrap">
                 <li><a class="link-secondary me-4" href="#">About</a></li>

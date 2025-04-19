@@ -13,7 +13,8 @@
     <link href="<?php echo e(asset('css/style.css')); ?>" rel="stylesheet" />
     <link href="<?php echo e(asset('css/toastify.min.css')); ?>" rel="stylesheet" />
 
-    <link href="<?php echo e(asset('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css')); ?>" rel="stylesheet" />
+    <link href="<?php echo e(asset('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css')); ?>"
+        rel="stylesheet" />
 
     <link href="<?php echo e(asset('css/jquery.dataTables.min.css')); ?>" rel="stylesheet" />
     <script src="<?php echo e(asset('js/jquery-3.7.0.min.js')); ?>"></script>
@@ -44,7 +45,7 @@
                 <span class="icon-nav h5 m-0" onclick="MenuBarClickHandler()">
                     <img class="nav-logo-sm mx-2" src="<?php echo e(asset('images/menu.svg')); ?>" alt="logo" />
                 </span>
-                <img class="nav-logo mx-2" src="<?php echo e(asset('images/logo.png')); ?>" alt="logo" />
+                <img class="nav-logo mx-2" src="<?php echo e(asset('images/logo-website-SRVE-Link.png')); ?>" alt="logo" />
             </a>
 
             <div class="d-flex float-right h-auto">
@@ -88,6 +89,11 @@
         <a class="side-bar-item" href="<?php echo e(route('web.product')); ?>">
             <i class="bi bi-bag"></i>
             <span class="side-bar-item-caption">Product</span>
+        </a>
+
+        <a class="side-bar-item" href="<?php echo e(route('web.agent')); ?>">
+            <i class="bi bi-cash-stack"></i>
+            <span class="side-bar-item-caption">Agent Transactions</span>
         </a>
 
         <a class="side-bar-item" href="<?php echo e(route('web.sale')); ?>">
@@ -141,6 +147,7 @@
     <script>
         auth();
     </script>
+    <?php echo $__env->yieldPushContent('scripts'); ?>
 </body>
 
 </html>

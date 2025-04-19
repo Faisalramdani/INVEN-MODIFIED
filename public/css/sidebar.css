@@ -112,7 +112,7 @@
     width: 100% !important;
 }
 .side-bar-item:hover{
-    border-left: 4px solid #CB0C9F;
+    border-left: 4px solid #483285;
     transition: 0.2s;
     background-color: #F3D9EC;
 }
