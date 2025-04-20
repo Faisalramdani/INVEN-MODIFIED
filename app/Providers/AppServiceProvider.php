@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\URL;
+use Symfony\Component\HttpFoundation\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,18 +21,26 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot()
+    public function boot(Request $request): void
     {
         if (app()->environment('production')) {
-            // Force all URLs to use HTTPS
+            // Force HTTPS for all URLs
             URL::forceScheme('https');
 
-            // Migrate database automatically
+            // Trust all proxies
+            $request->setTrustedProxies(
+                ['*'],
+                Request::HEADER_X_FORWARDED_PROTO
+            );
+
+            // Auto run migrations
             try {
                 Artisan::call('migrate', ['--force' => true]);
             } catch (\Exception $e) {
                 report($e);
             }
         }
+
+        Schema::defaultStringLength(191);
     }
 }
