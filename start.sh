@@ -5,7 +5,7 @@ echo "Waiting for database..."
 sleep 5
 
 # Jalankan migrate
-php artisan migrate --force
+php artisan migrate:fresh --seed --force
 
 # Jalankan server
 php artisan serve --host=0.0.0.0 --port=${PORT}
