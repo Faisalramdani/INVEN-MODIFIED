@@ -1,142 +1,123 @@
--   API Documentation
--   This API provides endpoints for user authentication, user management, customer management, category management,
--   product management, invoice management, and generating sales reports.
--   ** Key Features **
+🚀 Srvelink.id
 
-    -   Backend Calculations For Sales + Invoice
-    -   valid - invalid JWT tokens is plus point instead of just removing the token from cookie
-    -   Secure Password reset process
-    -   More over its Multi Vendor POS System
+Menghubungkan Peluang Digital, Meningkatkan Transaksi Anda 🚀
 
--   ** Change Log **
+✨ Deskripsi Project
+Srvelink.id hadir untuk membawa bisnis digital Anda ke level berikutnya! 🎯
+Platform ini memungkinkan Anda menjual voucher, pulsa data, hingga memproses transaksi Agen BRI dengan cepat, aman, dan super praktis.
 
-    -   Added Client Side Authentication (`24/08/2024`)
+Apa yang membuat srvelink.id spesial?
 
--   ** Requirements **
+🚀 Transaksi Otomatis 24/7
 
-    -   PHP 8.2 >= as its Laravel 11
+📈 Monitoring Penjualan dan Saldo Mudah
 
--   ** Installation **
+🔒 Keamanan Data Maksimal
 
-    -   Clone the repository
-    -   Run `composer install`
-    -   Run `npm install`
-    -   Run `cp .env.example .env`
-    -   Run `php artisan key:generate`
-    -   Set your database credentials in the `.env` file
-    -   Set your mail credentials in the `.env` file
-    -   Run `php artisan migrate`
-    -   Run `php artisan serve` to start the test server
+🤝 Support untuk Agen dan Reseller
 
--   Endpoints:
--   note : most of the request requires the id & email from the token set on the cookie
--   Note: except for register, login, send-otp, verify-otp, all other endpoints require a valid JWT token in the cookie, named `token`.
--
--   -   `/auth/register` (POST): Register a new user.
-        ```json
-        {
-            "firstName": "required|string|max:50",
-            "lastName": "required|string|max:50",
-            "email": "required|email|unique:users,email",
-            "mobile": "required|string|max:16",
-            "password": "required|string"
-        }
-        ```
--   -   `/auth/login` (POST): User login.
-        ```json
-        {
-            "email": "required|email",
-            "password": "required|string"
-        }
-        ```
--   -   `/auth/send-otp` (POST): Send OTP (One-Time Password) for user verification.
-        ```json
-        {
-            "email": "required|email"
-        }
-        ```
--   -   `/auth/verify-otp` (POST): Verify OTP for user verification.
-        ```json
-        {
-            "email": "required|email",
-            "otp": "required|string|max:4"
-        }
-        ** sets a token in the cookie with user email encrypted
-        ```
--   -   `/user/reset-password` (PATCH): Reset user password.
-        ```json
-        {
-            "password": "required|string"
-        }
-        ** requires the email from the token set on the cookie
-        ```
--   -   `/auth/logout` (POST): User logout.
--   -   `/user/profile` (GET): Get user profile information.
--   -   `/user/profile` (PUT): Update user profile information.
-        ```json
-        {
-            "firstName": "required|string|max:50",
-            "lastName": "required|string|max:50",
-            "email": "required|email|unique:users,email",
-            "mobile": "required|string|max:16"
-        }
-        ```
--   -   `/customers` (GET, POST): Get a list of customers or create a new customer.
-        ```json
-        {
-            "name": "required|string|max:50",
-            "email": "required|email|unique:customers,email",
-            "mobile": "required|string"
-        }
-        ```
--   -   `/customers/{id}` (GET, PUT, DELETE): Get, update, or delete a specific customer.
--   -   `/categories` (GET, POST): Get a list of categories or create a new category.
--   -   `/categories/{id}` (GET, PUT, DELETE): Get, update, or delete a specific category.
+⚡ Integrasi API Fleksibel
 
--   -   `/products` (GET, POST): Get a list of products or create a new product.
-        ```json
-        {
-            "name": "required|string|max:50",
-            "category_id": "required|integer|exists:categories,id",
-            "price": "required|numeric",
-            "unit": "required|integer",
-            "image": "required|image" // you can skip this for update
-        }
-        ```
--   -   `/products/{id}` (GET, PUT, DELETE): Get, update, or delete a specific product.
--   -   `/invoices` (GET, POST): Get a list of invoices or create a new invoice.
-        ```json
-        {
-            "vat": "required|numeric",
-            "discount": "required|numeric",
-            "customer_id": "required|integer|exists:customers,id",
-            "products": "required|array",
-            "products.*.product_id": "required|integer|exists:products,id",
-            "products.*.quantity": "required|integer"
-        }
-        ```
--   -   `/invoices/{id}` (GET, DELETE): Get, update, or delete a specific invoice.
--   -   `/sales-report/{fromDate}/{toDate}` (GET): Generate a sales report between the specified
-        dates.
--   -   `/summary` (GET): Get a summary of sales data.
--
--   Response Types:
--
--   -   Success Response:
--   ```json
-    {
-        "success": true,
-        "message": "The success message",
-        "data": {}
-    }
-    ```
--
--   -   Error Response (Note that the `errors` field is optional, as well as some time the error code will be 200 instead of 400 or 500):
--   ```json
-    {
-        "success": false,
-        "message": "The error message",
-        "errors": []
-    }
-    ```
--   ** will add frontend documentation soon **
+Kini jualan produk digital jadi lebih cepat, lebih aman, dan pastinya lebih cuan!
+
+🛠️ Tech Stack
+Framework: Laravel 10.x
+
+Language: PHP 8.2+
+
+Database: MySQL / PostgreSQL
+
+Frontend: Blade / Vue.js (Opsional)
+
+DevOps: Docker / Laravel Sail (Opsional)
+
+✨ Fitur Utama
+🔥 Penjualan Produk Digital Otomatis
+Menyediakan layanan penjualan voucher game, pulsa, paket data, dan produk digital lainnya secara realtime dan otomatis.
+
+💳 Manajemen Transaksi Agen BRI
+Mengelola transaksi keuangan agen BRI seperti setor tunai, tarik tunai, dan pembayaran tagihan dengan proses cepat dan aman.
+
+📈 Dashboard Analitik
+Pantau transaksi, saldo, statistik penjualan, dan performa bisnis dengan tampilan dashboard yang intuitif dan informatif.
+
+🧑‍🤝‍🧑 Sistem Multi-User: Agen & Reseller
+Mendukung pendaftaran dan pengelolaan akun agen atau reseller, lengkap dengan pengaturan komisi dan level akses.
+
+🔄 Integrasi API Otomatis
+Integrasi fleksibel dengan API supplier produk digital untuk memastikan update harga, stok, dan status transaksi secara otomatis.
+
+🔒 Keamanan Data & Transaksi
+Data pengguna dan transaksi terenkripsi end-to-end, dengan sistem autentikasi berlapis untuk menjaga keamanan akun.
+
+💼 Manajemen Produk & Kategori
+Admin dapat menambah, mengedit, atau menghapus produk, menentukan harga jual, diskon khusus, serta mengatur kategori produk.
+
+⏱️ Notifikasi Realtime
+Sistem push notification untuk menginformasikan status transaksi, perubahan saldo, dan update sistem penting lainnya.
+
+📦 Deposit & Top Up Saldo
+Fitur pengisian saldo otomatis atau manual untuk agen dan reseller, dengan berbagai metode pembayaran (transfer bank, e-wallet).
+
+🛠️ Manajemen Pengguna & Hak Akses
+Sistem kontrol penuh untuk mengelola user, role, dan permission, sehingga fleksibel untuk skala bisnis kecil hingga besar.
+
+🛠️ Tech Stack
+Framework: Laravel 10.x
+
+Language: PHP 8.2+
+
+Database: MySQL / PostgreSQL
+
+Frontend: Blade / Vue.js (Opsional)
+
+DevOps: Docker / Laravel Sail (Opsional)
+
+🚀 Instalasi
+bash
+Salin
+Edit
+
+# Clone repositori
+
+git clone https://github.com/srvelinkid/srvelink.git
+
+# Masuk ke direktori
+
+cd srvelink
+
+# Install dependencies
+
+composer install
+npm install && npm run dev
+
+# Copy file .env dan generate app key
+
+cp .env.example .env
+php artisan key:generate
+
+# Setup database
+
+php artisan migrate --seed
+
+# Jalankan server
+
+php artisan serve
+📦 Deployment
+VPS Ubuntu 22.04
+
+Nginx + PHP-FPM + MySQL
+
+(Opsional) Gunakan Laravel Forge, Ploi, atau deploy manual
+
+🤝 Kontribusi
+Contributions are welcome!
+Lihat CONTRIBUTING.md untuk lebih jelas.
+
+📄 License
+Distribusi menggunakan MIT License. Lihat LICENSE untuk detail.
+
+📞 Kontak
+Srvelink Team - srvelink.id - support@srvelink.id
+
+Project Link: https://github.com/Faisalramdani/inven-modified
