@@ -4,7 +4,8 @@
     <nav class="navbar sticky-top navbar-expand-lg navbar-light py-2 shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img class="img-fluid" src="{{ asset('/images/logo-website-SRVE-LINK.png') }}" alt="" width="96px">
+                <img class="img-fluid" src="{{ secure_asset('/images/logo-website-SRVE-LINK.png') }}" alt=""
+                    width="96px">
             </a>
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#header01" type="button"
                 aria-controls="header01" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 offset-lg-1">
-                    <img class="img-fluid" src="{{ asset('/images/hero.svg') }}" alt="">
+                    <img class="img-fluid" src="{{ secure_asset('/images/hero.svg') }}" alt="">
                 </div>
             </div>
         </div>
@@ -53,28 +54,28 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-3 p-3">
                     <div class="card px-0 text-center">
-                        <img class="card-img-top w-100 mb-3" src="{{ asset('/images/man.jpg') }}" alt="">
+                        <img class="card-img-top w-100 mb-3" src="{{ secure_asset('/images/man.jpg') }}" alt="">
                         <h5>Danny Bailey</h5>
                         <p class="text-muted mb-4">CEO &amp; Founder</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 p-3">
                     <div class="card px-0 text-center">
-                        <img class="card-img-top w-100 mb-3" src="{{ asset('/images/man.jpg') }}" alt="">
+                        <img class="card-img-top w-100 mb-3" src="{{ secure_asset('/images/man.jpg') }}" alt="">
                         <h5>Danny Bailey</h5>
                         <p class="text-muted mb-4">CEO &amp; Founder</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 p-3">
                     <div class="card px-0 text-center">
-                        <img class="card-img-top w-100 mb-3" src="{{ asset('/images/man.jpg') }}" alt="">
+                        <img class="card-img-top w-100 mb-3" src="{{ secure_asset('/images/man.jpg') }}" alt="">
                         <h5>Danny Bailey</h5>
                         <p class="text-muted mb-4">CEO &amp; Founder</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 p-3">
                     <div class="card px-0 text-center">
-                        <img class="card-img-top w-100 mb-3" src="{{ asset('/images/man.jpg') }}" alt="">
+                        <img class="card-img-top w-100 mb-3" src="{{ secure_asset('/images/man.jpg') }}" alt="">
                         <h5>Danny Bailey</h5>
                         <p class="text-muted mb-4">CEO &amp; Founder</p>
                     </div>
@@ -111,7 +112,7 @@
     <footer class="bg-light py-5">
         <div class="border-bottom container pb-5 text-center">
             <a class="d-inline-block mx-auto mb-4" href="#">
-                <img class="img-fluid"src="{{ asset('/images/logo-website-SRVE-LINK.png') }}" alt=""
+                <img class="img-fluid"src="{{ secure_asset('/images/logo-website-SRVE-LINK.png') }}" alt=""
                     width="96px">
             </a>
             <ul class="d-flex justify-content-center align-items-center list-unstyled mb-4 flex-wrap">
@@ -122,19 +123,19 @@
             </ul>
             <div>
                 <a class="d-inline-block me-4" href="#">
-                    <img src="{{ asset('/images/facebook.svg') }}">
+                    <img src="{{ secure_asset('/images/facebook.svg') }}">
                 </a>
                 <a class="d-inline-block me-4" href="#">
-                    <img src="{{ asset('/images/twitter.svg') }}">
+                    <img src="{{ secure_asset('/images/twitter.svg') }}">
                 </a>
                 <a class="d-inline-block me-4" href="#">
-                    <img src="{{ asset('/images/github.svg') }}">
+                    <img src="{{ secure_asset('/images/github.svg') }}">
                 </a>
                 <a class="d-inline-block me-4" href="#">
-                    <img src="{{ asset('/images/instagram.svg') }}">
+                    <img src="{{ secure_asset('/images/instagram.svg') }}">
                 </a>
                 <a class="d-inline-block" href="#">
-                    <img src="{{ asset('/images/linkedin.svg') }}">
+                    <img src="{{ secure_asset('/images/linkedin.svg') }}">
                 </a>
             </div>
         </div>
